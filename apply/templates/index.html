@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid State Games | Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            Solid State<span>Games</span>
+        </div>
+
+        <nav>
+           
+    <a href="{% url 'inicio' %}" class="activo">Inicio</a>
+    <a href="{% url 'Juegos' %}">Juegos</a>
+    <a href="{% url 'marcas' %}">Marcas</a>
+    <a href="{% url 'ofertas' %}">Ofertas</a>
+    <a href="{% url 'collecciones' %}">Colecciones</a>
+    <a href="{% url 'contacto' %}">Contacto</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'carrito' %}">Carrito</a>
+
+ {% if user.is_authenticated %}
+        <span>Hola, {{ user.username }}</span>
+
+        <form action="{% url 'cerrar_sesion' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn-cerrar-sesion">
+                Cerrar sesión
+            </button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Iniciar sesión</a>
+        <a href="{% url 'registro' %}">Registrarse</a>
+    {% endif %}
+
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-contenido">
+            <p class="subtitulo">Tienda de juegos la serpiente solida</p>
+            <h1>
+                Encuentra tu proxima aventura
+                <br>
+                que estás buscando.
+            </h1>
+            <p>
+                Descubre nuestra selección de juegos,
+                y ofertas que tenemos para ti.
+            </p>
+            <a href= "{% url 'Juegos' %}" class="boton">VER juegos</a>
+        </div>
+    </section>
+
+    <section class="musica">
+        <div class="reproductor-musica">
+            <div class="disco">
+                <img id="disco" src="{% static 'img/disco.png' %}" alt="Disco de vinilo">
+                <img id="portadaCancion" src="{% static 'img/portada1.jpg' %}" alt="Portada de la canción">
+            </div>
+
+            <div class="musica-info">
+                <p class="subtitulo">AHORA REPRODUCIENDO</p>
+                <h2 id="nombreCancion">Canción 1</h2>
+                <p id="nombreArtista">Mi playlist</p>
+
+                <audio id="reproductor">
+                    <source id="fuenteAudio" src="{% static 'musica/cancion1.mp3' %}" type="audio/mpeg">
+                </audio>
+
+                <div class="controles-musica">
+                    <button type="button" id="anterior" class="boton-musica">⏮</button>
+                    <button type="button" id="playPause" class="boton-musica boton-play">▶</button>
+                    <button type="button" id="siguiente" class="boton-musica">⏭</button>
+                </div>
+
+                <p class="estado-musica" id="estadoMusica">⏸ PAUSADO</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2>juegos destacados</h2>
+        <p class="descripcion">Conoce algunos de los juegos que tenemos disponibles.</p>
+
+        <div class="tarjetas">
+            <div class="card">
+                <div class="imagen-juego venom-snake"></div>
+                <div class="card-contenido">
+                    <h3>Metal gear solid 5</h3>
+                    <p>siguilo • aventura</p>
+                    <strong>$850.00 MXN</strong>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imagen-juego yakumo"></div>
+                <div class="card-contenido">
+                    <h3>ninja Gaiden 4</h3>
+                    <p>Hack handslash •gore</p>
+                    <strong>$1,420.00 MXN</strong>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imagen-juego Eve"></div>
+                <div class="card-contenido">
+                    <h3>Stellar blade</h3>
+                    <p>ciencia ficcion • soulslike</p>
+                    <strong>$1,600.00 MXN</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Solid State Games | Todos los derechos reservados</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+<form action="{% url 'cerrar_sesion' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Cerrar sesión</button>
+</form>
+
+
+
+
+</body>
+</html>

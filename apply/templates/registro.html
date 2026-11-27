@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Solid State Games</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="registro-contenedor">
+
+        <div class="registro-caja">
+            <h1>Crear cuenta</h1>
+            <p class="subtitulo">Únete a Solid State Games</p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button type="submit">Registrar usuario</button>
+            </form>
+
+            <p class="enlace-login">
+                ¿Ya tienes una cuenta?
+                <a href="{% url 'login' %}">Iniciar sesión</a>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

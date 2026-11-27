@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid State Games | Marcas</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+            solida State<span>Games</span>
+        </div>
+
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'Juegos' %}">Juegos</a>
+            <a href="{% url 'marcas' %}" class="activo">Marcas</a>
+            <a href="{% url 'ofertas' %}">Ofertas</a>
+            <a href="{% url 'collecciones' %}">Colecciones</a>
+            <a href="{% url 'contacto' %}">Contacto</a>
+            <a href="{% url 'login' %}">Login</a>
+           <a href="{% url 'carrito' %}">Carrito</a>
+        </nav>
+    </header>
+
+    <section class="titulo-pagina">
+        <p>Los mejores juegos a tu disposcion</p>
+        <h1>Juegos disponibles</h1>
+        <span>Conoce algunos de los juegos que encontraras en Solid State Games.</span>
+    </section>
+
+    <section class="seccion">
+        <div class="marcas">
+            <div class="marca">
+                <h2>Persona 5 royal</h2>
+                <p>Atlus compani.</p>
+                <a href="{% url 'Juegos' %}">VER Juegos</a>
+            </div>
+
+            <div class="marca">
+                <h2>cyberpunck 2077</h2>
+                <p>cydyproyects.</p>
+                <a href="{% url 'Juegos' %}">VER Juegos</a>
+            </div>
+
+            <div class="marca">
+                <h2>ninja Gaiden 4</h2>
+                <p>Ninja theori</p>
+                <a href="{% url 'Juegos' %}">VER Juegos</a>
+            </div>
+
+            <div class="marca">
+                <h2>Metal gear solid Delta</h2>
+                <p>Konami.</p>
+                <a href="{% url 'Juegos' %}">VER juegos</a>
+            </div>
+
+            <div class="marca">
+                <h2>Stellar blade</h2>
+                <p>ship up.</p>
+                <a href="{% url 'Juegos' %}">VER Juegos</a>
+            </div>
+
+            <div class="marca">
+                <h2>Bleach Rebirth of souls</h2>
+                <p>Bandai.</p>
+                <a href="{% url 'Juegos' %}">VER Juegos</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Solid States Games | Todos los derechos reservados</p>
+    </footer>
+    
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

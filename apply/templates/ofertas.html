@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Solid State Games</title> | Ofertas</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            Solid State<span>Games</span>
+        </div>
+
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+    <a href="{% url 'Juegos' %}">Juegos</a>
+    <a href="{% url 'marcas' %}">Marcas</a>
+    <a href="{% url 'ofertas' %}" class="activo">Ofertas</a>
+    <a href="{% url 'collecciones' %}">Colecciones</a>
+    <a href="{% url 'contacto' %}">Contacto</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'carrito' %}">Carrito</a>
+        </nav>
+    </header>
+
+    <section class="titulo-pagina">
+        <p>OPORTUNIDADES</p>
+        <h1>Ofertas especiales</h1>
+        <span>Encuentra los mejores juegos aprecios mas bajos.</span>
+    </section>
+
+    <section class="seccion">
+        <div class="tarjetas">
+            <div class="card oferta">
+                <div class="imagen-juego infamous"></div>
+                <div class="card-contenido">
+                    <small>OFERTA ESPECIAL</small>
+                    <h3>inFAMOUS Second son</h3>
+                    <p class="precio-anterior">$1,150,000 MXN</p>
+                    <strong>$500.00MXN</strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="infamous">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="card oferta">
+                <div class="imagen-juego venom-snake"></div>
+                <div class="card-contenido">
+                    <small>OFERTA ESPECIAL</small>
+                    <h3>Metal Gear solid 5</h3>
+                    <p class="precio-anterior">$1,000.00 MXN</p>
+                    <strong>$200.00 MXN</strong>
+
+                    <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="metalgear5">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="card oferta">
+                <div class="imagen-juego asura"></div>
+                <div class="card-contenido">
+                    <small>OFERTA ESPECIAL</small>
+                    <h3>Asura wrhats</h3>
+                    <p class="precio-anterior">$800.00 MXN</p>
+                    <strong>$250.00 MXN</strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="asura">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="card oferta">
+                <div class="imagen-juego batman"></div>
+                <div class="card-contenido">
+                    <small>OFERTA ESPECIAL</small>
+                    <h3>Batman arkam collecciones</h3>
+                    <p class="precio-anterior">$1,950,000 MXN</p>
+                    <strong>$350.00 MXN</strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="batman">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="card oferta">
+                <div class="imagen-juego p5"></div>
+                <div class="card-contenido">
+                    <small>OFERTA ESPECIAL</small>
+                    <h3>edicion coleccionista ps5</h3>
+                    <p class="precio-anterior">$6,850.00 MXN</p>
+                    <strong>$1,700.00 MXN</strong>
+
+                    <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="p5coleccionista">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="card oferta">
+                <div class="imagen-juego re"></div>
+                <div class="card-contenido">
+                    <small>OFERTA ESPECIAL</small>
+                    <h3>Resident EVil Requiem</h3>
+                    <p class="precio-anterior">$1,950.00 MXN</p>
+                    <strong>$600.000 MXN</strong>
+
+                    <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="resident">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Solid State Games | Todos los derechos reservados</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

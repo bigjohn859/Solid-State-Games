@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios | Solid State Game</title>
+</head>
+<body>
+    <h1>Administración de usuarios</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <p>
+        <a href="{% url 'agregar_usuario' %}">Agregar usuario</a>
+    </p>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Usuario</th>
+            <th>Correo</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.username }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>
+                {% if usuario.is_active %}Activo{% else %}Inactivo{% endif %}
+            </td>
+            <td>
+                <a href="{% url 'editar_usuario' usuario.id %}">
+                    Modificar
+                </a>
+
+                {% if usuario.id != request.user.id %}
+                <form method="post"
+                      action="{% url 'eliminar_usuario' usuario.id %}"
+                      style="display:inline"
+                      onsubmit="return confirm('¿Seguro que deseas eliminar esta cuenta?');">
+                    {% csrf_token %}
+                    <button type="submit">Eliminar</button>
+                </form>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay usuarios registrados.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="{% url 'inicio' %}">Volver a la tienda</a></p>
+</body>
+</html>

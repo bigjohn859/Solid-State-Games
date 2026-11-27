@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid State Games | juegos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+    Solid State<span>Games</span>
+        </div>
+
+     <nav>
+    <a href="{% url 'inicio' %}">Inicio</a>
+    <a href="{% url 'Juegos' %}" class="activo">Juegos</a>
+    <a href="{% url 'marcas' %}">Marcas</a>
+    <a href="{% url 'ofertas' %}">Ofertas</a>
+    <a href="{% url 'collecciones' %}">Colecciones</a>
+    <a href="{% url 'contacto' %}">Contacto</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'carrito' %}">Carrito</a
+
+    </nav>
+</header>
+
+    <section class="titulo-pagina">
+        <p>Solid State Games</p>
+        <h1>Nuestros juegos </h1>
+        <span>Explora nuestra selecccion de juegos.</span>
+    </section>
+
+    <section class="seccion">
+        <div class="tarjetas">
+            <div class="card">
+                <div class="imagen-juego Eve"></div>
+                <div class="card-contenido">
+                    <h3>Stellar blade</h3>
+                    <p>2024 • Accion • Hack handslash</p>
+                    <strong>$1,600.00 MXN</strong>
+
+                    <form method="POST" action="{% url 'agregar_carrito' %}">
+            {% csrf_token %}
+            <input type="hidden" name="producto" value="stellar">
+            <button type="submit">Agregar al carrito</button>
+        </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imagen-juego cyberpunck"></div>
+                <div class="card-contenido">
+                    <h3>Cyberpunck 2077</h3>
+                    <p>2022 • Accion  • aventura</p>
+                    <strong>$1,420.00 MXN</strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+            {% csrf_token %}
+            <input type="hidden" name="producto" value="cyberpunk">
+            <button type="submit">Agregar al carrito</button>
+        </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imagen-juego joker"></div>
+                <div class="card-contenido">
+                    <h3>Persona 5 royal</h3>
+                    <p>2020 • anime • rpg</p>
+                    <strong>$1,050.00MXN</strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+            {% csrf_token %}
+            <input type="hidden" name="producto" value="persona">
+            <button type="submit">Agregar al carrito</button>
+        </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imagen-juego yakumo"></div>
+                <div class="card-contenido">
+                    <h3>ninja Gaiden 4</h3>
+                    <p>2024 • Hack handSlash• gore</p>
+                    <strong>$980.00 MXN</strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+            {% csrf_token %}
+            <input type="hidden" name="producto" value="ninja">
+            <button type="submit">Agregar al carrito</button>
+        </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imagen-juego ichigo"></div>
+                <div class="card-contenido">
+                    <h3>Bleach Rebirth of souls</h3>
+                    <p>2024 • Anime • figthin </p>
+                    <strong>$1,600.00 MXN</strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+            {% csrf_token %}
+            <input type="hidden" name="producto" value="bleach">
+            <button type="submit">Agregar al carrito</button>
+        </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imagen-juego delta"></div>
+                <div class="card-contenido">
+                    <h3>Metal gear solid Delta</h3>
+                    <p>2024 • Sigilo • aventura</p>
+                    <strong>$1,367.00 MXN</strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+            {% csrf_token %}
+            <input type="hidden" name="producto" value="metalgear">
+            <button type="submit">Agregar al carrito</button>
+        </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Solid States Games | Todos los derechos reservados</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

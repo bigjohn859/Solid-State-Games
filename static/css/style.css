@@ -1,0 +1,1453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    min-height: 80px;
+    padding: 0 7%;
+    background: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #242424;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #09e509;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    position: relative;
+    color: #bdbdbd;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+nav a.activo {
+    color: #09e514;
+}
+
+nav a.activo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background: #09e509;
+    
+}
+
+.hero {
+    min-height: 650px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            #050505 15%,
+            rgba(5, 5, 5, 0.88) 40%,
+            rgba(5, 5, 5, 0.35) 75%,
+            rgba(5, 5, 5, 0.15)
+        ),
+        url("../img/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-contenido {
+    max-width: 620px;
+    position: relative;
+    z-index: 2;
+}
+
+.subtitulo {
+    color: #10e509;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.hero-contenido > p:not(.subtitulo) {
+    color: #c7c7c7;
+    line-height: 1.7;
+    font-size: 16px;
+    margin-bottom: 30px;
+    max-width: 530px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 15px 28px;
+    background: #1be509;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 2px solid #09e509;
+}
+
+.boton:hover {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.seccion {
+    width: 100%;
+    padding: 80px 8%;
+}
+
+.seccion > h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    color: #777777;
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+
+.titulo-pagina {
+    padding: 100px 20px 75px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #151515,
+            #0d0d0d
+        );
+
+    border-bottom: 1px solid #222222;
+}
+
+.titulo-pagina p {
+    color: #2ee509;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.titulo-pagina h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.titulo-pagina span {
+    color: #777777;
+    font-size: 15px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: #151515;
+    border: 1px solid #242424;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #444444;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.imagen-juego {
+    width: 100%;
+    height: 230px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: transform 0.5s;
+}
+
+.card:hover .imagen-juego {
+    transform: scale(1.04);
+}
+
+.Eve {
+    background-image: url("../img/Eve.jpg");
+}
+
+.cyberpunck {
+    background-image: url("../img/cyberpunck.jpg");
+}
+
+.joker {
+    background-image: url("../img/joker.jpg");
+}
+
+.yakumo {
+    background-image: url("../img/yakumo.jpg");
+}
+
+.ichigo {
+    background-image: url("../img/ichigo.jpg");
+}
+
+.venom-snake {
+    background-image: url("../img/venom-snake.jpg");
+}
+.infamous {
+    background-image: url("../img/infamous.jpg");
+}
+
+
+.delta {
+    background-image: url("../img/delta.jpg");
+}
+
+
+
+
+.asura {
+    background-image: url("../img/asura.jpg");
+}
+
+
+.batman {
+    background-image: url("../img/batman.jpg");
+}
+
+
+.p5 {
+    background-image: url("../img/p5.jpg");
+}
+
+
+.re {
+    background-image: url("../img/re.jpg");
+}
+
+
+
+.card-contenido {
+    padding: 22px;
+}
+
+.card-contenido h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card-contenido p {
+    color: #858585;
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.card-contenido strong {
+    color: #23e509;
+    font-size: 19px;
+}
+
+.marcas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.marca {
+    min-height: 200px;
+    padding: 40px 30px;
+
+    background: #151515;
+    border: 1px solid #242424;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.marca:hover {
+    border-color: #2ee509;
+    transform: translateY(-6px);
+}
+
+.marca h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.marca p {
+    color: #777777;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.marca a {
+    color: #1be509;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.marca a:hover {
+    color: #ffffff;
+}
+
+.oferta {
+    position: relative;
+}
+
+.oferta::before {
+    content: "OFERTA";
+
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    z-index: 5;
+
+    padding: 7px 12px;
+
+    background: #10e509;
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.oferta small {
+    display: block;
+    color: #10e509;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.precio-anterior {
+    color: #666666 !important;
+    text-decoration: line-through;
+    margin-bottom: 8px !important;
+}
+
+.collecciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.foto {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+
+    background: #151515;
+    border: 1px solid #242424;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.5s;
+}
+
+.foto:hover img {
+    transform: scale(1.08);
+}
+
+.foto-info {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 25px 20px 20px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.9)
+        );
+
+    transform: translateY(5px);
+    transition: 0.3s;
+}
+
+.foto-info h3 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.foto-info p {
+    color: #cccccc;
+    font-size: 13px;
+}
+
+.foto:hover .foto-info {
+    transform: translateY(0);
+}
+
+.contacto {
+    max-width: 1050px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+.informacion h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.informacion p {
+    color: #888888;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.informacion strong {
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+
+    background: #151515;
+    color: #ffffff;
+
+    border: 1px solid #292929;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #35e509;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    margin-top: 10px;
+    padding: 15px;
+
+    border: 2px solid #35e509;
+    background: #1be509;
+    color: #ffffff;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: transparent;
+    color: #ffffff;
+}
+
+.musica {
+    width: 100%;
+    padding: 80px 8%;
+    background: #0b0b0b;
+}
+
+.reproductor-musica {
+    max-width: 950px;
+    margin: 0 auto;
+
+    padding: 45px;
+
+    background: #151515;
+    border: 1px solid #292929;
+
+    display: flex;
+    align-items: center;
+
+    gap: 55px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.disco {
+
+    width: 250px;
+    height: 250px;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#disco {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    z-index: 1;
+
+}
+
+#portadaCancion {
+
+    position: absolute;
+
+    width: 94px;
+    height: 94px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    z-index: 2;
+
+    border: 2px solid #111111;
+
+}
+
+.disco::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 11px;
+    height: 11px;
+
+    background: #111111;
+
+    border: 2px solid #eeeeee;
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 3;
+
+}
+
+.disco.girando {
+
+    animation:
+        girarDisco
+        4s
+        linear
+        infinite;
+
+}
+
+@keyframes girarDisco {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.musica-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.musica-info h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.musica-info > p:not(.subtitulo):not(.estado-musica) {
+    color: #777777;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.musica-info audio {
+    width: 100%;
+    height: 45px;
+}
+
+.estado-musica {
+
+    margin-top: 15px;
+
+    color: #1be509 !important;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+.controles-musica {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.boton-musica {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid #444444;
+
+    background: #202020;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    margin: 0;
+    padding: 0;
+
+    transition: 0.3s;
+}
+
+.boton-musica:hover {
+
+    background: #09e509;
+
+    border-color: #09e51b;
+
+    transform: scale(1.08);
+
+}
+
+.boton-musica.boton-play {
+
+    width: 60px;
+    height: 60px;
+
+    background: #10e509;
+
+    border-color: #09e51b;
+
+    font-size: 23px;
+
+}
+
+.boton-musica.boton-play:hover {
+
+    background: #ffffff;
+
+    color: #09e514;
+
+    border-color: #ffffff;
+
+    transform: scale(1.1);
+
+}
+
+#nombreCancion {
+
+    margin-bottom: 8px;
+
+    transition: 0.3s;
+}
+
+#nombreArtista {
+
+    color: #777777;
+
+    margin-bottom: 10px;
+}
+
+footer {
+
+    width: 100%;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #080808;
+
+    border-top: 1px solid #222222;
+
+    color: #666666;
+
+    font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+
+    header {
+
+        padding: 20px 5%;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 18px;
+
+    }
+
+    .hero {
+
+        min-height: 550px;
+
+        padding: 0 7%;
+
+    }
+
+    .hero h1 {
+
+        font-size: 48px;
+
+    }
+
+    .tarjetas {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .marcas {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .collecciones {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .contacto {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    header {
+
+        padding: 20px;
+
+        gap: 22px;
+
+    }
+
+    .logo {
+
+        font-size: 22px;
+
+    }
+
+    nav {
+
+        gap: 14px;
+
+    }
+
+    nav a {
+
+        font-size: 11px;
+
+    }
+
+    nav a.activo::after {
+
+        bottom: -7px;
+
+    }
+
+    .hero {
+
+        min-height: 600px;
+
+        padding: 0 25px;
+
+        background-position: 65% center;
+
+    }
+
+    .hero h1 {
+
+        font-size: 38px;
+
+    }
+
+    .hero-contenido > p:not(.subtitulo) {
+
+        font-size: 14px;
+
+    }
+
+    .titulo-pagina {
+
+        padding: 75px 20px 55px;
+
+    }
+
+    .titulo-pagina h1 {
+
+        font-size: 38px;
+
+    }
+
+    .seccion {
+
+        padding: 60px 20px;
+
+    }
+
+    .seccion > h2 {
+
+        font-size: 30px;
+
+    }
+
+    .tarjetas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .marcas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .collecciones {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .foto {
+
+        height: 260px;
+
+    }
+
+    .musica {
+
+        padding: 60px 20px;
+
+    }
+
+    .reproductor-musica {
+
+        padding: 30px 20px;
+
+        flex-direction: column;
+
+        gap: 30px;
+
+        text-align: center;
+
+    }
+
+    .disco {
+
+        width: 200px;
+
+        height: 200px;
+
+    }
+
+    #portadaCancion {
+
+        width: 76px;
+
+        height: 76px;
+
+    }
+
+    .musica-info {
+
+        width: 100%;
+
+    }
+
+    .musica-info h2 {
+
+        font-size: 27px;
+
+    }
+
+    .controles-musica {
+
+        gap: 12px;
+
+    }
+
+    .boton-musica {
+
+        width: 45px;
+
+        height: 45px;
+
+    }
+
+    .boton-musica.boton-play {
+
+        width: 56px;
+
+        height: 56px;
+
+    }
+
+    .contacto {
+
+        gap: 40px;
+
+    }
+
+   .btn-cerrar-sesion {
+    background-color: #51dc35;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #2ab03c;
+}
+
+nav form {
+    display: inline-block;
+    margin: 0;
+} 
+
+
+
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #090914, #17132d, #10213b);
+}
+
+
+.contenedor-login {
+    width: 100%;
+    max-width: 400px;
+    padding: 35px;
+    background: #171725;
+    border: 1px solid #493775;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(112, 65, 220, 0.25);
+}
+
+
+.logo {
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.logo span {
+    color: #9b72ff;
+}
+
+
+.subtitulo {
+    text-align: center;
+    color: #9b72ff;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.contenedor-login h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.descripcion {
+    color: #b9b9cc;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+
+.contenedor-login label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.contenedor-login input {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
+    background: #0e0e19;
+    color: #fff;
+    border: 1px solid #414057;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.contenedor-login input:focus {
+    border-color: #9b72ff;
+    box-shadow: 0 0 8px rgba(155, 114, 255, 0.25);
+}
+
+/* Botón */
+.contenedor-login button {
+    width: 100%;
+    padding: 13px;
+    color: #fff;
+    background: linear-gradient(90deg, #753ce8, #3868ef);
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contenedor-login button:hover {
+    filter: brightness(1.15);
+}
+
+/* Error de acceso */
+.error {
+    padding: 12px;
+    margin-bottom: 18px;
+    color: #ffb7bd;
+    background: #3a1923;
+    border: 1px solid #47b938;
+    border-radius: 7px;
+}
+
+/* Registro y regreso */
+.enlaces-login {
+    margin-top: 22px;
+    text-align: center;
+    color: #c3c3d1;
+    font-size: 14px;
+}
+
+.enlaces-login a,
+.volver-inicio {
+    color: #b49aff;
+    text-decoration: none;
+}
+
+.enlaces-login a {
+    font-weight: bold;
+}
+
+.volver-inicio {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.enlaces-login a:hover,
+.volver-inicio:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .contenedor-login {
+        padding: 25px 20px;
+    }
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    color: #222;
+}
+
+header {
+    background: #151515;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #8a2be2;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+}
+
+nav a:hover {
+    color: #a855f7;
+}
+
+.contenedor {
+    background: white;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #222;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #222;
+    color: white;
+}
+
+button {
+    background: #6f2da8;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4b1c75;
+}
+
+a {
+    color: #6f2da8;
+    text-decoration: none;
+    margin: 10px;
+}
+
+@media print {
+    button, header, a {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .contenedor {
+        margin: 0;
+        box-shadow: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #090909, #191329, #101010);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.registro-contenedor {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.registro-caja {
+    background-color: #1c1c1c;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #7139b8;
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.25);
+}
+
+.registro-caja h1 {
+    text-align: center;
+    color: #b56cff;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.registro-caja form p {
+    margin-bottom: 18px;
+}
+
+.registro-caja label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ddd;
+    font-weight: bold;
+}
+
+.registro-caja input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #292929;
+    color: white;
+    outline: none;
+}
+
+.registro-caja input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 5px #a855f7;
+}
+
+.registro-caja ul,
+.registro-caja .helptext {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.registro-caja button {
+    width: 100%;
+    padding: 13px;
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.registro-caja button:hover {
+    background-color: #9d4edd;
+}
+
+.enlace-login {
+    text-align: center;
+    margin-top: 22px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.enlace-login a {
+    color: #b56cff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlace-login a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+}
+

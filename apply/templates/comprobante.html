@@ -1,0 +1,50 @@
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprobante de compra</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<main class="contenedor">
+    <h1>Solid State Games</h1>
+    <h2>Comprobante de compra</h2>
+
+    <p><strong>Fecha:</strong> {{ fecha|date:"d/m/Y H:i" }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.cantidad }}</td>
+                <td>${{ producto.precio|floatformat:2 }}</td>
+                <td>${{ producto.subtotal|floatformat:2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Total pagado: ${{ total|floatformat:2 }} MXN</h2>
+
+    <p>Gracias por tu compra.</p>
+
+    <button onclick="window.print()">Imprimir comprobante</button>
+    <a href="/">Regresar al inicio</a>
+</main>
+
+</body>
+</html>
+```

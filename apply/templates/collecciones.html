@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solit State Games | collecciones</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            Solit State<span>Games</span>
+        </div>
+
+        <nav>
+                <a href="{% url 'inicio' %}">Inicio</a>
+    <a href="{% url 'Juegos' %}">Juegos</a>
+    <a href="{% url 'marcas' %}">Marcas</a>
+    <a href="{% url 'ofertas' %}">Ofertas</a>
+    <a href="{% url 'collecciones' %}" class="activo">Colecciones</a>
+    <a href="{% url 'contacto' %}">Contacto</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'carrito' %}">Carrito</a>
+
+        </nav>
+    </header>
+
+    <section class="titulo-pagina">
+        <p>Solit State Games</p>
+        <h1>collecciones</h1>
+        <span>Conoce algunas de nuestras edicones de coleccionista.</span>
+    </section>
+
+    <section class="seccion">
+        <div class="galeria">
+            <div class="foto">
+                <img src="{% static 'img/cyber.jpg' %}" alt=" Edicion coleccionista cyberpunck 2077">
+                <div class="foto-info">
+                    <h3>Edicion coleccionista cyberpunck 2077</h3>
+                    <strong>$2,769.00</strong>
+
+                    <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="cybercoleccion">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="foto">
+                <img src="{% static 'img/doom.jpg' %}" alt="Edicion Coleccionista Doom Eternal">
+                <div class="foto-info">
+                    <h3>Edicion Coleccionista Doom Eternal</h3>
+                    <strong>$4,000.00</strong>
+
+                    <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="doomcoleccion">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="foto">
+                <img src="{% static 'img/DD.jpg' %}" alt="Edicion Coleccionista Metal gear solid 5">
+                <div class="foto-info">
+                    <h3>Edicion coleccionista Metal gear solid 5</h3>
+                    <strong>$2,500.00</strong>
+
+                      <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="metalgearcoleccion">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="foto">
+                <img src="{% static 'img/requiem.jpg' %}" alt="Edicion coleccionista Residen Evil Requiem">
+                <div class="foto-info">
+                    <h3>Edicion coleccionista Residen Evil Requiem</h3>
+                    <strong>$7,695.00</strong>
+
+                    <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="requiemcoleccion">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="foto">
+                <img src="{% static 'img/infamous.jpg' %}" alt="Edicion coleccionista inFamous second son">
+                <div class="foto-info">
+                    <h3>Edicion coleccionista inFamous second son</h3>
+                    <strong>$5,456.00</Strong>
+
+                     <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="infamouscoleccion">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="foto">
+                <img src="{% static 'img/ryu.jpg' %}" alt="Edicion coleccionista Ninja Gaiden 3">
+                <div class="foto-info">
+                    <h3>Edicion de coleccionista Ninja gaiden 3</h3>
+                    <strong>$1,500.00</strong>
+
+                    <form method="POST" action="{% url 'agregar_carrito' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto" value="ninjagaidencoleccion">
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Solid State Games | Todos los derechos reservados</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

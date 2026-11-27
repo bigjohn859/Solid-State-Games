@@ -1,0 +1,81 @@
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi carrito | Solid State Games</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="logo">Solid State<span>Games</span></div>
+    <nav>
+         <a href="{% url 'inicio' %}">Inicio</a>
+    <a href="{% url 'Juegos' %}">Juegos</a>
+    <a href="{% url 'marcas' %}">Marcas</a>
+    <a href="{% url 'ofertas' %}">Ofertas</a>
+    <a href="{% url 'collecciones' %}">Colecciones</a>
+    <a href="{% url 'contacto' %}">Contacto</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'carrito' %}" class="activo">Carrito</a>
+    </nav>
+</header>
+
+<main class="contenedor">
+    <h1>Mi carrito de compras</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {% if productos %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio|floatformat:2 }} MXN</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td>${{ producto.subtotal|floatformat:2 }} MXN</td>
+                    <td>
+                        <form method="POST"
+                              action="{% url 'eliminar_carrito' producto.id %}">
+                            {% csrf_token %}
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Total: ${{ total|floatformat:2 }} MXN</h2>
+
+        <form method="POST" action="{% url 'finalizar_compra' %}">
+            {% csrf_token %}
+            <button type="submit">Finalizar compra</button>
+        </form>
+
+    {% else %}
+        <p>Tu carrito está vacío.</p>
+        <a href="/juegos/">Ir a ver juegos</a>
+    {% endif %}
+</main>
+
+</body>
+</html>
+```

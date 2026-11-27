@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid State Games | Contacto</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            Solid State<span>Games</span>
+        </div>
+
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+    <a href="{% url 'Juegos' %}">Juegos</a>
+    <a href="{% url 'marcas' %}">Marcas</a>
+    <a href="{% url 'ofertas' %}">Ofertas</a>
+    <a href="{% url 'collecciones' %}">Colecciones</a>
+    <a href="{% url 'contacto' %}" class="activo">Contacto</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'carrito' %}">Carrito</a>
+        </nav>
+    </header>
+
+    <section class="titulo-pagina">
+        <p>Solid State Games</p>
+        <h1>Contáctanos</h1>
+        <span>¿Tienes alguna pregunta? Estamos para ayudarte.</span>
+    </section>
+
+   <section class="seccion">
+        <div class="contacto">
+
+            <div class="informacion">
+                <h2>Información de contacto</h2>
+
+                <p>
+                    <strong>Teléfono</strong><br>
+                    8361340569
+                </p>
+
+                <p>
+                    <strong>Correo electrónico</strong><br>
+                    fm244566@gmail.com
+                </p>
+
+                <p>
+                    <strong>Dirección</strong><br>
+                    Ciudad Mante, Tamaulipas
+                </p>
+
+                <p>
+                    <strong>Horario</strong><br>
+                    Lunes a domingo<br>
+                    10:00 AM - 9:00 PM
+                </p>
+            </div>
+
+          
+
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="mensaje-exito">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST" action="{% url 'contacto' %}">
+
+                {% csrf_token %}
+
+                <label for="nombre">Nombre</label>
+                <input type="text"
+                       id="nombre"
+                       name="nombre"
+                       placeholder="Escribe tu nombre"
+                       required>
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email"
+                       id="correo"
+                       name="correo"
+                       placeholder="fm244566@gmail.com"
+                       required>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel"
+                       id="telefono"
+                       name="telefono"
+                       placeholder="8361340569"
+                       required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje"
+                          name="mensaje"
+                          placeholder="Escribe tu mensaje aquí..."
+                          required></textarea>
+
+                <button type="submit" id="botonContacto">
+                    ENVIAR MENSAJE
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Solid State Games | Todos los derechos reservados</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
